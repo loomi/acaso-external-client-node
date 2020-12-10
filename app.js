@@ -14,7 +14,7 @@ const userAccessToken = getUserToken();
 
 const link = `https://aca.so/redirect?src_id=${SOURCE_ID}&token=${userAccessToken}`;
 
-app.post('/auth/acaso', (req, res) => {
+app.get('/auth/acaso', (req, res) => {
   if (req.headers['x-api-key'] != X_API_KEY) {
     return res.status(400).send('Invalid API Key');
   }
