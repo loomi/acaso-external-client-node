@@ -12,7 +12,8 @@ const SOURCE_ID = process.env.SOURCE_ID;
 
 const userAccessToken = getUserToken();
 
-const link = `https://aca.so/redirect?src_id=${SOURCE_ID}&token=${userAccessToken}`;
+// The link that you will redirect to ACASO
+const link = `https://aca.so/redirect?src_id=${SOURCE_ID}&id_token=${userAccessToken}`;
 
 app.get('/auth/acaso', (req, res) => {
   if (req.headers['x-api-key'] != X_API_KEY) {
